@@ -11,7 +11,8 @@
 import { initializeApp } from "firebase/app";
 import { getFirestore } from "firebase/firestore";
 import { getStorage } from 'firebase/storage';
-import { API_KEY, AUTH_DOMAIN, PROJECT_ID, STORAGE_BUCKET, MESSAGING_SENDER_ID, APP_ID, test} from '@env';
+import { API_KEY, AUTH_DOMAIN, PROJECT_ID, STORAGE_BUCKET, MESSAGING_SENDER_ID, APP_ID } from '@env';
+// ✅ Removido "test" de la importación
  
 // Your web app's Firebase configuration
 const firebaseConfig = {
@@ -22,7 +23,8 @@ const firebaseConfig = {
   messagingSenderId: MESSAGING_SENDER_ID,
   appId: APP_ID    
 };
-console.log(test)
+
+// ✅ Removido console.log(test)
 console.log("Valor de configuracion", firebaseConfig);
  
 // Initialize Firebase
@@ -39,6 +41,7 @@ if (database) {
 } else {
   console.log('Firestore initialization failed');
 }
+
 /*
 const storage = getStorage(app);
  
@@ -48,5 +51,6 @@ if (storage) {
   console.log('storage initialization failed');
 }
 */
+
 //export { database,storage };
 export { database };
